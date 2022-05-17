@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random
 import string
 from datetime import datetime
-from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 app.secret_key = "super-secret-key"
