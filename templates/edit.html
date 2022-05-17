@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit your note{% endblock title %}
+
+{% block body %}
+    <div class="container my-3">
+        <h2>Edit your note</h2>
+        <form action="/updatenote/{{ note['noteID'] }}" method="post">
+            <div class="mb-3">
+              <label for="title" class="form-label">Note Title</label>
+              <input type="text" class="form-control rounded-1" id="title" name="title" value="{{ note['title'] }}">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Note Description</label>
+                <textarea class="form-control rounded-1" id="description" name="description" rows="3">{{ note['description'] }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-danger rounded-1">Submit</button>
+        </form>
+    </div>
+{% endblock body %}
